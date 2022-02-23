@@ -10,3 +10,6 @@
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.dll
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ref/ToDoList.dll
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.pdb
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList/bin/Debug/net5.0/ToDoList.runtimeconfig.json
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList/bin/Debug/net5.0/ToDoList.runtimeconfig.dev.json
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.genruntimeconfig.cache

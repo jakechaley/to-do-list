@@ -13,8 +13,8 @@ namespace ToDoList.Controllers
       return View(allItems);
     }
 
-    [HttpGet("/item/new")]
-    public ActionResult CreateForm()
+    [HttpGet("/items/new")]
+    public ActionResult New()
     {
       return View();
     }
@@ -31,6 +31,13 @@ namespace ToDoList.Controllers
     {
       Item.ClearAll();
       return View();
+    }
+
+    [HttpGet("/items/{id}")]
+    public ActionResult Show(int id)
+    {
+      Item foundItem = Item.Find(id);
+      return View(foundItem);
     }
   }
 }

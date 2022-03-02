@@ -98,3 +98,8 @@
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/obj/Debug/net5.0/ref/ToDoList.Tests.dll
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/obj/Debug/net5.0/ToDoList.Tests.pdb
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/obj/Debug/net5.0/ToDoList.Tests.genruntimeconfig.cache
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.Views.dll
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.Views.pdb
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.deps.json
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.runtimeconfig.json
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.runtimeconfig.dev.json

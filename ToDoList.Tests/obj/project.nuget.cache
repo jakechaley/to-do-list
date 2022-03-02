@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XVSnpvaDqO/oWrUIBUgmJ+yEl0g2Wa7d0yVvm5LqA/t+sFrFeT2UdVnFrszjfeBRHLRoddgPmF6k6PjOtoSlXw==",
+  "dgSpecHash": "VWKcLXlcM/TTc853A8zkFM7GaadR2Sw9Lea4b3TMOE9EX8jV8mYlXpdkmz2jQFM3hgl5hEsggwmzhlZXag5+nw==",
   "success": true,
   "projectFilePath": "/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/ToDoList.Tests.csproj",
   "expectedPackageFiles": [

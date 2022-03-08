@@ -103,3 +103,4 @@
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.deps.json
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.runtimeconfig.json
 /Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.runtimeconfig.dev.json
+/Users/jacobhaley/Desktop/Epicodus/scrap/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/MySqlConnector.dll

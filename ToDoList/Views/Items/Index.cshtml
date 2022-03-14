@@ -12,9 +12,25 @@
   <h3>No items have been added yet!</h3>
 } 
 
-@foreach (Item item in Model)
+@using (Html.BeginForm())
 {
-  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId })</li>
+  @foreach (var i in Model)
+  {
+    <label>
+        @if (i.Completed)
+        {
+          @Html.CheckBox(i.Description, new { value = i.ItemId, @checked = "" })
+        }
+        else
+        {
+          @Html.CheckBox(i.Description, new { value = i.ItemId })
+        }
+
+        @i.Description
+    </label>
+    <br />
+  }
+  <input type="submit" value="Mark Completed" />
 }
 
 <p>@Html.ActionLink("Add new item", "Create")</p>

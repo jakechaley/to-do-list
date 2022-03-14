@@ -14,7 +14,10 @@
 
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
-
+  <br>
+  @Html.Label("Mark Completed")
+  @Html.CheckBoxFor(model => model.Completed)
+  <br>
   @Html.Label("Select category")
   @Html.DropDownList("CategoryId")
 

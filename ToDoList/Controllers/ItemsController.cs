@@ -17,9 +17,9 @@ namespace ToDoList.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
+    public ActionResult Index(int id)
     {
-        return View(_db.Items.ToList());
+      return View(_db.Items.ToList());
     }
 
     public ActionResult Create()
@@ -69,6 +69,18 @@ namespace ToDoList.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost]
+    public ActionResult Index(Item item, int CategoryId)
+    {
+      if (item.Completed == true)
+      {
+        _db.Items.Update(new Item() { ItemId = item.ItemId });
+      }
+      // _db.Entry(item.Completed).State = EntityState.Modified;
+      // _db.SaveChanges();
+      return View();
+    }
+
     public ActionResult AddCategory(int id)
     {
       var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
@@ -98,6 +110,15 @@ namespace ToDoList.Controllers
     {
       var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
       _db.Items.Remove(thisItem);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+        [HttpPost]
+    public ActionResult DeleteCategory(int joinId)
+    {
+      var joinEntry = _db.CategoryItem.FirstOrDefault(entry => entry.CategoryItemId == joinId);
+      _db.CategoryItem.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

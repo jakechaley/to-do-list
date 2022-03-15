@@ -10,27 +10,24 @@
 @if (@Model.Count == 0)
 {
   <h3>No items have been added yet!</h3>
-} 
-
+}
 @using (Html.BeginForm())
 {
-  @foreach (var i in Model)
+<ul>
+  @for(int i = 0; i < Model.Count; i++)
   {
-    <label>
-        @if (i.Completed)
-        {
-          @Html.CheckBox(i.Description, new { value = i.ItemId, @checked = "" })
-        }
-        else
-        {
-          @Html.CheckBox(i.Description, new { value = i.ItemId })
-        }
 
-        @i.Description
-    </label>
-    <br />
+    <li>
+        @Html.HiddenFor(x => x[i].ItemId)
+        @Html.HiddenFor(x => x[i].Description)
+        @Html.CheckBoxFor(x => x[i].Completed)
+        @Html.ActionLink($"{Model[i].Description}", "Details", new { id = Model[i].ItemId })
+    </li>
   }
-  <input type="submit" value="Mark Completed" />
+</ul>
+
+  <input type="submit" value="Save" />
 }
 
 <p>@Html.ActionLink("Add new item", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

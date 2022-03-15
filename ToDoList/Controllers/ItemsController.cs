@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
+using ToDoList.Models;
 
 namespace ToDoList.Controllers
 {
@@ -17,9 +16,25 @@ namespace ToDoList.Controllers
       _db = db;
     }
 
-    public ActionResult Index(int id)
+    public ActionResult Index()
     {
+      ViewBag.PageTitle = "View All Items";
       return View(_db.Items.ToList());
+    }
+
+    [HttpPost]
+    public ActionResult Index (List<Item> myItems)
+    {
+      foreach(var newItem in myItems)
+      {
+        var dbItemMatch =_db.Items.FirstOrDefault(dbItem => dbItem.ItemId == newItem.ItemId);
+        if(dbItemMatch != null)
+        {
+          dbItemMatch.Completed = newItem.Completed; 
+        }    
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
 
     public ActionResult Create()
@@ -35,8 +50,8 @@ namespace ToDoList.Controllers
       _db.SaveChanges();
       if (CategoryId != 0)
       {
-          _db.CategoryItem.Add(new CategoryItem() { CategoryId = CategoryId, ItemId = item.ItemId });
-          _db.SaveChanges();
+        _db.CategoryItem.Add(new CategoryItem() { CategoryId = CategoryId, ItemId = item.ItemId });
+        _db.SaveChanges();
       }
       return RedirectToAction("Index");
     }
@@ -58,30 +73,18 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public ActionResult Edit(Item item, int CategoryId)
+    public ActionResult Edit (Item item, int CategoryId)
     {
-      if (CategoryId != 0)
+      if (CategoryId != 0) 
       {
         _db.CategoryItem.Add(new CategoryItem() { CategoryId = CategoryId, ItemId = item.ItemId });
       }
-      _db.Entry(item).State = EntityState.Modified;
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+        _db.Entry(item).State = EntityState.Modified;
+        _db.SaveChanges();
+        return RedirectToAction("Index");
     }
 
-    [HttpPost]
-    public ActionResult Index(Item item, int CategoryId)
-    {
-      if (item.Completed == true)
-      {
-        _db.Items.Update(new Item() { ItemId = item.ItemId });
-      }
-      // _db.Entry(item.Completed).State = EntityState.Modified;
-      // _db.SaveChanges();
-      return View();
-    }
-
-    public ActionResult AddCategory(int id)
+    public ActionResult AddCategory (int id)
     {
       var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
       ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
@@ -114,7 +117,7 @@ namespace ToDoList.Controllers
       return RedirectToAction("Index");
     }
 
-        [HttpPost]
+    [HttpPost]
     public ActionResult DeleteCategory(int joinId)
     {
       var joinEntry = _db.CategoryItem.FirstOrDefault(entry => entry.CategoryItemId == joinId);

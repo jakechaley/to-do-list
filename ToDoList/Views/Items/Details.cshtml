@@ -26,19 +26,19 @@ else
       }
     </ul>
   </h4>
+  <br />
+  <h4>Completion Status
+    @if (Model.Completed == false)
+    {
+      <p>This item has not been completed.</p>
+    }
+    else
+    {
+      <p>This item has been completed.</p>
+    }
+  </h4>
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.ItemId })</p>
 <p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.ItemId })</p>
 <p>@Html.ActionLink("Add a Category", "AddCategory", new { id = Model.ItemId })</p>
-
-@if (Model.Completed == false)
-{
-  <h3>This Item has not been completed yet! </h3>
-}
-else
-{
-  <h3>This item is completed!</h3>
-}
-
-<!-- @foreach (var  in item.Completed) -->

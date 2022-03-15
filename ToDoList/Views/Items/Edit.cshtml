@@ -14,14 +14,11 @@
 
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
-  <br>
-  @Html.Label("Mark Completed")
-  @Html.CheckBoxFor(model => model.Completed)
-  <br>
+  <br />
+
   @Html.Label("Select category")
   @Html.DropDownList("CategoryId")
 
   <input type="submit" value="Save" />
 }
-
 <p>@Html.ActionLink("Back to list", "Index")</p>
